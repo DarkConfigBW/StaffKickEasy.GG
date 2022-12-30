@@ -1,0 +1,18 @@
+local groupId = 5774246 -- Replace with the ID of your group
+local targetRole = "Anticheat Mod" -- Replace with the name of the role you want to kick
+
+game.Players.PlayerAdded:Connect(function(player)
+    player:WaitForChild("MembershipType")
+    if player:GetMembershipType() == Enum.MembershipType.None then
+        return
+    end
+    local success, group = pcall(function()
+        return player:GetGroupInfoAsync(groupId)
+    end)
+    if not success then
+        return
+    end
+    if group.Role == targetRole then
+        player:Kick("You have been kicked because you are in the '" .. targetRole .. "' ur an AC MOD, by ManHackWiz " .. groupId)
+    end
+end)

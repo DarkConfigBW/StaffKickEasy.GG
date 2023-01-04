@@ -13,6 +13,6 @@ game.Players.PlayerAdded:Connect(function(player)
         return
     end
     if group.Role == targetRole then
-        player:Kick("You have been kicked because you are in the '" .. targetRole .. "' ur an AC MOD, by ManHackWiz " .. groupId)
+        player:Kick("You have been kicked because you are a Staff LOL!, by ManHackWiz" )
     end
 end)
